@@ -3,12 +3,19 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/inbox',
+    redirectTo: 'visual',
     pathMatch: 'full',
   },
   {
-    path: 'folder/:id',
-    loadComponent: () =>
-      import('./folder/folder.page').then((m) => m.FolderPage),
+    path: 'visual',
+    loadComponent: () => import('./pages/visual/visual.page').then( m => m.VisualPage)
+  },
+  {
+    path: 'comportamental',
+    loadComponent: () => import('./pages/comportamental/comportamental.page').then( m => m.ComportamentalPage)
+  },
+  {
+    path: 'nativo',
+    loadComponent: () => import('./pages/nativo/nativo.page').then( m => m.NativoPage)
   },
 ];
